@@ -12,7 +12,6 @@
 		DBDE4EB32BB4216900A0BC33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBDE4EB22BB4216900A0BC33 /* Assets.xcassets */; };
 		DBDE4EB62BB4216900A0BC33 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBDE4EB52BB4216900A0BC33 /* Preview Assets.xcassets */; };
 		DBDE4EBE2BB60CEA00A0BC33 /* Blow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DBDE4EBD2BB60CEA00A0BC33 /* Blow.mp3 */; };
-		DBDE4EC02BB60D2100A0BC33 /* song1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DBDE4EBF2BB60D2100A0BC33 /* song1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +20,8 @@
 		DBDE4EB02BB4216700A0BC33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DBDE4EB22BB4216900A0BC33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBDE4EB52BB4216900A0BC33 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DBDE4EBC2BB4A80F00A0BC33 /* My-Music-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "My-Music-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DBDE4EBC2BB4A80F00A0BC33 /* My-Music-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "My-Music-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DBDE4EBD2BB60CEA00A0BC33 /* Blow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Blow.mp3; sourceTree = "<group>"; };
-		DBDE4EBF2BB60D2100A0BC33 /* song1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song1.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +58,6 @@
 				DBDE4EAE2BB4216700A0BC33 /* My_MusicApp.swift */,
 				DBDE4EB02BB4216700A0BC33 /* ContentView.swift */,
 				DBDE4EB22BB4216900A0BC33 /* Assets.xcassets */,
-				DBDE4EBF2BB60D2100A0BC33 /* song1.mp3 */,
 				DBDE4EB42BB4216900A0BC33 /* Preview Content */,
 			);
 			path = "My Music";
@@ -135,7 +132,6 @@
 			files = (
 				DBDE4EBE2BB60CEA00A0BC33 /* Blow.mp3 in Resources */,
 				DBDE4EB62BB4216900A0BC33 /* Preview Assets.xcassets in Resources */,
-				DBDE4EC02BB60D2100A0BC33 /* song1.mp3 in Resources */,
 				DBDE4EB32BB4216900A0BC33 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +287,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -321,6 +318,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

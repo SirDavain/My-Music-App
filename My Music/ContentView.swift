@@ -8,7 +8,8 @@
 import SwiftUI
 //import AVKit
 import AVFoundation
-import UIKit
+import Foundation
+//import UIKit
 import MediaPlayer
 
 //class AudioPlayerViewController: UIViewController {
@@ -86,23 +87,53 @@ class MusicPlayer {
     }
 }
 
-func getSongURL() -> String {
-    
+struct DocumentFileManager {
+    func createDocsFolder() -> URL? {
+        do {
+            let documentsURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            let folderURL = documentsURL.appendingPathComponent("My Music")
+            try FileManager.default.createDirectory(at: folderURL, withIntermediateDirectories: true)
+            
+            return folderURL
+        } catch {
+            print("Error: \(error.localizedDescription)")
+            return nil
+        }
+    }
+    func listDocFolderContents(_ fileURL: URL?) -> [String] {
+        do {
+            //let docURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            let fileURLs = try FileManager.default.contentsOfDirectory(atPath: fileURL!.path)
+            
+            return fileURLs
+        } catch {
+            print("Error: \(error.localizedDescription)")
+            return []
+        }
+    }
 }
 
-func playMusicFromURL() {
-    let fileManager = FileManager.default
-    let musicPlayer = MusicPlayer()
-    let musicURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    let songURL = getSongURL()
-
-    musicPlayer.playMusic(form: songURL)
-}
+//func playMusicFromURL() {
+//    let fileManager = FileManager.default
+//    let musicPlayer = MusicPlayer()
+//    let musicURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+//    let songURL = getSongURL()
+//
+//    musicPlayer.playMusic(form: songURL)
+//}
 
 struct ContentView: View {
     //Bundle.main.url(forResource: "song1", withExtension: "mp3")
+//    let song = "String"
+    let docFileManager = DocumentFileManager()
+    let fileNames: [String]
+    let fileURL: URL?
+    
+    init() {
+        fileURL = docFileManager.createDocsFolder()
+        fileNames = docFileManager.listDocFolderContents(fileURL)
+    }
 
-    let song = "String"
     var body: some View {
         NavigationView {
             ZStack {
@@ -123,12 +154,15 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .padding(.top, 20.0)
                     List {
-                        Text("Hi")
-                        Text("there")
-                        Text("you")
+                        Text("This")
+                        Text("should")
+                        Text("be the playlists by default")
+                    }
+                    List(fileNames, id: \.self) { fileName in
+                        Text(self.fileNameWithoutExtension(fileName))
                     }
                     Button {
-                        playMusicFromURL()
+                        //playMusicFromURL()
                     } label: {
                         Text("Play a song")
                     }
@@ -138,6 +172,11 @@ struct ContentView: View {
             .preferredColorScheme(.dark)
         }
     }
+    func fileNameWithoutExtension(_ fileName: String) -> String {
+        let fileURL = URL(fileURLWithPath: fileName)
+        return fileURL.deletingPathExtension().lastPathComponent
+    }
+    
     struct Song {
         var title: String
         var author: String
